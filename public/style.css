@@ -53,6 +53,10 @@ main {
   margin-top: 0;
 }
 
+.dbinfo {
+  text-align: left;
+}
+
 p {
   color: #555;
 }
