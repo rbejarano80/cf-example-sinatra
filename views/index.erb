@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <!-- Template by html.am -->
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Sinatra Example - Cloud Foundry</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Sinatra Example - Cloud Foundry</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-	<body>
-		<header id="header">
-			<div class="innertube">
-				<h1>Ruby/Sinatra Example - Cloud Foundry</h1>
-			</div>
-		</header>
+<body>
+<header id="header">
+  <div class="innertube">
+    <h1>Ruby/Sinatra Example - Cloud Foundry</h1>
+  </div>
+</header>
 
-		<div id="wrapper">
-			<main>
-				<div id="content">
-					<div class="innertube">
-						<h2>IP: <%= @host %> - Port: <%= @port %> - DEA Index: <%= @index %></h2>
-						<img src="https://lh5.googleusercontent.com/-aDaxlU0CssE/AAAAAAAAAAI/AAAAAAAABo4/HbWBRIZ_lK8/photo.jpg"></img>
-						<img src="http://www.altoros.com/cflive/wp-content/uploads/2015/04/cloud-foundry-logo.png"></img>
+<div id="wrapper">
+  <main>
+    <div id="content">
+      <div class="innertube">
+        <h2>IP: <%= @host %> - Port: <%= @port %> - DEA Index: <%= @index %></h2>
+        <img src="https://lh5.googleusercontent.com/-aDaxlU0CssE/AAAAAAAAAAI/AAAAAAAABo4/HbWBRIZ_lK8/photo.jpg"></img>
+        <img src="http://www.altoros.com/cflive/wp-content/uploads/2015/04/cloud-foundry-logo.png"></img>
 
-					</div>
-				</div>
-			</main>
-		</div>
+        <h3>User provided service</h3>
 
-		<footer id="footer">
-			<div class="innertube">
-				<p>Altoros Training</p>
-			</div>
-		</footer>
+        <% @my_fictional_service.each do |k, v| %>
+            <% if k == 'credentials' %>
+                <h4>Credentials</h4>
+                <% v.each do |c, cv| %>
+                    <strong><%= c %></strong>:<%= cv %><br/>
+                <% end %>
+            <% else %>
+                <strong><%= k %></strong>:<%= v %><br/>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>
 
-	</body>
+<footer id="footer">
+  <div class="innertube">
+    <p>Altoros Training</p>
+  </div>
+</footer>
+
+</body>
 </html>
