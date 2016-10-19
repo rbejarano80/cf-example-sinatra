@@ -8,7 +8,7 @@ This is a simple Sinatra 'Hello World' web application.
 
 ### Download this app
 ```
-$ git clone https://github.com/Altoros/cf-example-sinatra.git
+$ git clone https://github.com/abonillasuse/cf-example-sinatra.git
 $ cd cf-example-sinatra
 ```
 
